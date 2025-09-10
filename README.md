@@ -1,5 +1,7 @@
 Manzio – Blogging & Content Platform
 
+Live demo: https://manzio.vercel.app/
+
 A modern blogging platform built with Next.js, React, and Tailwind CSS.
 It features server-side rendering (SSR) for SEO optimization, NextAuth for secure authentication, and SWR for efficient client-side data fetching with real-time updates.
 
