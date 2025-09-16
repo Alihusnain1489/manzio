@@ -1,3 +1,5 @@
+"use client";
+
 import { Save, User, Bell, Shield, Globe, Database } from "lucide-react";
 import { useState } from "react";
 

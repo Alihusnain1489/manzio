@@ -1,3 +1,5 @@
+"use client";
+
 import { Search, Filter, Download, AlertCircle, CheckCircle, Info, XCircle } from "lucide-react";
 import { useState } from "react";
 

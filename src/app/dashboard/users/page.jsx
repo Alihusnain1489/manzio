@@ -1,3 +1,5 @@
+"use client";
+
 import { Search, Filter, Plus, Edit, Trash2, MoreVertical, UserPlus, Mail } from "lucide-react";
 import { useState } from "react";
 

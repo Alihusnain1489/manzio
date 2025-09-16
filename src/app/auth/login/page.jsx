@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Eye, EyeOff, LogIn, Mail, Lock, ArrowLeft } from "lucide-react";
 
 export default function Login() {
@@ -15,8 +15,15 @@ export default function Login() {
   const [error, setError] = useState("");
   
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const redirect = searchParams.get("redirect") || "/dashboard";
+  // Wrap useSearchParams access behind a client-only effect to avoid prerender bailouts
+  const [redirect, setRedirect] = useState("/dashboard");
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const r = params.get("redirect");
+      if (r) setRedirect(r);
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

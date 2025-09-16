@@ -1,3 +1,5 @@
+"use client";
+
 import { Filter, ExternalLink, Github, Eye } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
